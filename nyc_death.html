@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<style>
+header{
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+  color: black;
+}
+nav{
+float: left;
+width: 20%;
+height: 700px; /* only for demonstration, should be removed */
+background: rgb(255, 255, 255);
+
+}
+article{
+float: right;
+padding: 20px;
+width: 77%;
+background-color: rgb(255, 255, 255);
+height: 700px; /* only for demonstration, should be removed */
+}
+
+.dropbtn {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 20px;
+  width: 300px;
+  height: 60px;
+  font-size: 16px;
+  border: 2px solid black;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #c6ccc6;;}
+</style>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<body>
+<header>
+<h2>New York City Death Rates</h2>
+</header>
+<nav>
+<h1>Factors</h1>
+
+<div class="dropdown">
+  <button class="dropbtn">Year</button>
+  <div class="dropdown-content">
+    <button  style="height:50px;width:300px" onclick="_2019()">2019</button>
+    <button  style="height:50px;width:300px" onclick="_2014()">2014</button>
+    <button  style="height:50px;width:300px" onclick="_2013()">2013</button>
+    <button  style="height:50px;width:300px" onclick="_2012()">2012</button>
+    <button  style="height:50px;width:300px" onclick="_2011()">2011</button>
+    <button  style="height:50px;width:300px" onclick="_2010()">2010</button>
+    <button  style="height:50px;width:300px" onclick="_2009()">2009</button>
+    <button  style="height:50px;width:300px" onclick="_2008()">2008</button>
+    <button  style="height:50px;width:300px" onclick="_2007()">2007</button>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Gender</button>
+  <div class="dropdown-content">
+    <button  style="height:50px;width:300px" onclick="female()">Female</button>
+    <button  style="height:50px;width:300px" onclick="male()">Male</button>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Race</button>
+  <div class="dropdown-content">
+    <button  style="height:50px;width:300px" onclick="hispanic()">Hispanic</button>
+    <button  style="height:50px;width:300px" onclick="asian()">Asian</button>
+    <button  style="height:50px;width:300px" onclick="black()">African American</button>
+    <button  style="height:50px;width:300px" onclick="white()">Caucasian</button>
+    <button  style="height:50px;width:300px" onclick="none()">Undeclared</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</nav>
+<article>
+<div
+id="myChart" style="width:100%; max-width:1100px; height:800px; float: right">
+</div>
+
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 165372],["Malignant Neoplasms (Cancer: C00-C97)", 118815],["All Other Causes", 89609],["Influenza (Flu) and Pneumonia (J09-J18)", 20302],["Diabetes Mellitus (E10-E14)", 15688],["Chronic Lower Respiratory Diseases (J40-J47)", 15027],["Cerebrovascular Disease (Stroke: I60-I69)", 14818],["Essential Hypertension and Renal Diseases (I10, I12)", 8270],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 7467],["Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use (F11-F16, F18-F19, X40-X42, X44)", 5804]]);
+
+var options = {
+  title:'Top 10 Causes of Deaths'
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+  chart.draw(data, options);
+}
+</script>
+
+</article>
+
+<script>
+    function female(){
+       google.charts.load('current', {'packages':['corechart']});
+       google.charts.setOnLoadCallback(drawChart);
+
+       function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 87612],["Malignant Neoplasms (Cancer: C00-C97)", 60162],["All Other Causes", 44574],["Influenza (Flu) and Pneumonia (J09-J18)", 10553],["Cerebrovascular Disease (Stroke: I60-I69)", 8668],["Chronic Lower Respiratory Diseases (J40-J47)", 8173],["Diabetes Mellitus (E10-E14)", 8127],["Essential Hypertension and Renal Diseases (I10, I12)", 5062],["Alzheimer's Disease (G30)", 3779],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 2276]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in Woman '
+       };
+
+       var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+       chart.draw(data, options);
+
+       }
+    
+       }
+function male(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+              var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 77760],["Malignant Neoplasms (Cancer: C00-C97)", 58653],["All Other Causes", 45035],["Influenza (Flu) and Pneumonia (J09-J18)", 9749],["Diabetes Mellitus (E10-E14)", 7561],["Chronic Lower Respiratory Diseases (J40-J47)", 6854],["Cerebrovascular Disease (Stroke: I60-I69)", 6150],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 5191],["Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use (F11-F16, F18-F19, X40-X42, X44)", 4922],["Human Immunodeficiency Virus Disease (HIV: B20-B24)", 3634]]);
+              var options = {
+              title:'Top 10 Causes of Death in Men'
+              };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+
+              }
+function _2019(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 17821],["Malignant Neoplasms (Cancer: C00-C97)", 12448],["All Other Causes", 11610],["Diabetes Mellitus (E10-E14)", 1894],["Cerebrovascular Disease (Stroke: I60-I69)", 1877],["Chronic Lower Respiratory Diseases (J40-J47)", 1813],["Influenza (Flu) and Pneumonia (J09-J18)", 1624],["Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use (F11-F16, F18-F19, X40-X42, X44)", 1520],["Essential Hypertension and Renal Diseases (I10, I12)", 1315],["Accidents Except Drug Poisoning (V01-X39, X43, X45-X59, Y85-Y86)", 986]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in 2019'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+
+function hispanic(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 24240],["Malignant Neoplasms (Cancer: C00-C97)", 19908],["All Other Causes", 19597],["Influenza (Flu) and Pneumonia (J09-J18)", 3688],["Diabetes Mellitus (E10-E14)", 3651],["Cerebrovascular Disease (Stroke: I60-I69)", 2991],["Chronic Lower Respiratory Diseases (J40-J47)", 2540],["Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use (F11-F16, F18-F19, X40-X42, X44)", 2038],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 1815],["Human Immunodeficiency Virus Disease (HIV: B20-B24)", 1771]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in Hispanics'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+function asian(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Malignant Neoplasms (Cancer: C00-C97)", 9180],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 8863],["All Other Causes", 5547],["Influenza (Flu) and Pneumonia (J09-J18)", 1487],["Cerebrovascular Disease (Stroke: I60-I69)", 1448],["Diabetes Mellitus (E10-E14)", 1073],["Chronic Lower Respiratory Diseases (J40-J47)", 865],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 747],["Essential Hypertension and Renal Diseases (I10, I12)", 612],["Intentional Self-Harm (Suicide: X60-X84, Y87.0)", 491]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in Asians'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+function black(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 40020],["Malignant Neoplasms (Cancer: C00-C97)", 30060],["All Other Causes", 24491],["Diabetes Mellitus (E10-E14)", 6201],["Influenza (Flu) and Pneumonia (J09-J18)", 4586],["Cerebrovascular Disease (Stroke: I60-I69)", 4193],["Human Immunodeficiency Virus Disease (HIV: B20-B24)", 3583],["Chronic Lower Respiratory Diseases (J40-J47)", 3512],["Essential Hypertension and Renal Diseases (I10, I12)", 3378],["Assault (Homicide: Y87.1, X85-Y09)", 1968]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in African Americans'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+
+function white(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 89595],["Malignant Neoplasms (Cancer: C00-C97)", 58116],["All Other Causes", 38376],["Influenza (Flu) and Pneumonia (J09-J18)", 10257],["Chronic Lower Respiratory Diseases (J40-J47)", 7938],["Cerebrovascular Disease (Stroke: I60-I69)", 6022],["Diabetes Mellitus (E10-E14)", 4457],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 3598],["Essential Hypertension and Renal Diseases (I10, I12)", 3148],["Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use (F11-F16, F18-F19, X40-X42, X44)", 2838]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in Cacasians'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+function none(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 2654],["All Other Causes", 1598],["Malignant Neoplasms (Cancer: C00-C97)", 1551],["Diabetes Mellitus (E10-E14)", 306],["Influenza (Flu) and Pneumonia (J09-J18)", 284],["Certain Conditions originating in the Perinatal Period (P00-P96)", 181],["Chronic Lower Respiratory Diseases (J40-J47)", 172],["Cerebrovascular Disease (Stroke: I60-I69)", 164],["Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use (F11-F16, F18-F19, X40-X42, X44)", 129],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 106]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in Undeclared'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+
+function _2014(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 16517],["Malignant Neoplasms (Cancer: C00-C97)", 13377],["All Other Causes", 11134],["Influenza (Flu) and Pneumonia (J09-J18)", 2220],["Chronic Lower Respiratory Diseases (J40-J47)", 1821],["Diabetes Mellitus (E10-E14)", 1798],["Cerebrovascular Disease (Stroke: I60-I69)", 1787],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 943],["Essential Hypertension and Renal Diseases (I10, I12)", 871],["Alzheimer's Disease (G30)", 567]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in 2014'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+function _2013(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 16759],["Malignant Neoplasms (Cancer: C00-C97)", 13358],["All Other Causes", 11075],["Influenza (Flu) and Pneumonia (J09-J18)", 2472],["Diabetes Mellitus (E10-E14)", 1843],["Chronic Lower Respiratory Diseases (J40-J47)", 1833],["Cerebrovascular Disease (Stroke: I60-I69)", 1700],["Essential Hypertension and Renal Diseases (I10, I12)", 971],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 948],["Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use (F11-F16, F18-F19, X40-X42, X44)", 564]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in 2013'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+function _2012(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 16731],["Malignant Neoplasms (Cancer: C00-C97)", 13401],["All Other Causes", 10708],["Influenza (Flu) and Pneumonia (J09-J18)", 2240],["Diabetes Mellitus (E10-E14)", 1808],["Chronic Lower Respiratory Diseases (J40-J47)", 1650],["Cerebrovascular Disease (Stroke: I60-I69)", 1646],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 972],["Essential Hypertension and Renal Diseases (I10, I12)", 893],["Human Immunodeficiency Virus Disease (HIV: B20-B24)", 471]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in 2012'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+function _2011(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 16900],["Malignant Neoplasms (Cancer: C00-C97)", 13438],["All Other Causes", 10387],["Influenza (Flu) and Pneumonia (J09-J18)", 2491],["Diabetes Mellitus (E10-E14)", 1770],["Chronic Lower Respiratory Diseases (J40-J47)", 1762],["Cerebrovascular Disease (Stroke: I60-I69)", 1745],["Essential Hypertension and Renal Diseases (I10, I12)", 886],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 750],["Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use (F11-F16, F18-F19, X40-X42, X44)", 683]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in 2011'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+function _2010(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 17927],["Malignant Neoplasms (Cancer: C00-C97)", 13330],["All Other Causes", 9552],["Influenza (Flu) and Pneumonia (J09-J18)", 2448],["Chronic Lower Respiratory Diseases (J40-J47)", 1714],["Diabetes Mellitus (E10-E14)", 1711],["Cerebrovascular Disease (Stroke: I60-I69)", 1568],["Essential Hypertension and Renal Diseases (I10, I12)", 965],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 865],["Human Immunodeficiency Virus Disease (HIV: B20-B24)", 725]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in 2010'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+
+function _2009(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 20084],["Malignant Neoplasms (Cancer: C00-C97)", 13174],["All Other Causes", 8445],["Influenza (Flu) and Pneumonia (J09-J18)", 2274],["Diabetes Mellitus (E10-E14)", 1678],["Chronic Lower Respiratory Diseases (J40-J47)", 1524],["Cerebrovascular Disease (Stroke: I60-I69)", 1437],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 925],["Essential Hypertension and Renal Diseases (I10, I12)", 849],["Human Immunodeficiency Virus Disease (HIV: B20-B24)", 837]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in 2009'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+function _2008(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 21192],["Malignant Neoplasms (Cancer: C00-C97)", 13040],["All Other Causes", 8556],["Influenza (Flu) and Pneumonia (J09-J18)", 2297],["Diabetes Mellitus (E10-E14)", 1631],["Chronic Lower Respiratory Diseases (J40-J47)", 1599],["Cerebrovascular Disease (Stroke: I60-I69)", 1504],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 1037],["Human Immunodeficiency Virus Disease (HIV: B20-B24)", 927],["Essential Hypertension and Renal Diseases (I10, I12)", 809]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in 2008'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+function _2007(){
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+       var data = google.visualization.arrayToDataTable([['Cause', 'count'],["Diseases of Heart (I00-I09, I11, I13, I20-I51)", 21441],["Malignant Neoplasms (Cancer: C00-C97)", 13249],["All Other Causes", 8142],["Influenza (Flu) and Pneumonia (J09-J18)", 2236],["Diabetes Mellitus (E10-E14)", 1555],["Cerebrovascular Disease (Stroke: I60-I69)", 1554],["Chronic Lower Respiratory Diseases (J40-J47)", 1311],["Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)", 1027],["Human Immunodeficiency Virus Disease (HIV: B20-B24)", 963],["Essential Hypertension and Renal Diseases (I10, I12)", 711]]);
+
+       var options = {
+       title:'Top 10 Causes of Death in 2007'
+       };
+
+              var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+              chart.draw(data, options);
+
+              }
+              }
+</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+
+
+
+</style>
+</script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<body>
+<header>
+
+
+
+
+</nav>
+<article>
+<div
+id="myChart" style="width:100%; max-width:1100px; height:500px;">
+</div>
+
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+var data = google.visualization.arrayToDataTable([['Cause', 'count'],['Diseases of Heart (I00-I09, I11, I13, I20-I51)', 165372],['Malignant Neoplasms (Cancer: C00-C97)', 118815],['All Other Causes', 89609],['Influenza (Flu) and Pneumonia (J09-J18)', 20302],['Diabetes Mellitus (E10-E14)', 15688],['Chronic Lower Respiratory Diseases (J40-J47)', 15027],['Cerebrovascular Disease (Stroke: I60-I69)', 14818],['Essential Hypertension and Renal Diseases (I10, I12)', 8270],['Accidents Except Drug Posioning (V01-X39, X43, X45-X59, Y85-Y86)', 7467],['Mental and Behavioral Disorders due to Accidental Poisoning and Other Psychoactive Substance Use (F11-F16, F18-F19, X40-X42, X44)', 5804]]);
+
+var options = {
+  title:'Top 10 Causes of Deaths'
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+  chart.draw(data, options);
+
+}
+
+
+</script>
+
+</article>
+
+</script>
+
+</body>
+</html>
+
+
+

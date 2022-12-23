@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gabriella Carbonero</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter';
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header' 
+    'left left middle middle right right' 
+    'footer footer footer footer footer footer';
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+} 
+
+.left,
+.middle,
+.right {
+  
+  height: 800px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the left column */
+.left {
+  grid-area: left;
+  width: 700px;
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+  width: 300px;
+}
+
+/* Style the right column */
+.right {
+  grid-area: right;
+  width: 500px;
+  border-left: 1px solid rgb(240, 240, 240);
+  background-color:rgb(41, 41, 41);
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left left left left left' 
+      'middle middle middle middle middle middle' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
+  }
+}
+
+.dot {
+  border: 1px solid rgb(240, 240, 240);
+  margin: 20px 2px;
+  margin-bottom: 30px;
+  height: 9px;
+  width: 9px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 1;
+}
+
+button {
+  padding: 5px 20px;
+  border: none;
+  font: inherit;
+  color: rgb(240, 240, 240);
+  background-color:rgb(41, 41, 41);
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(240, 240, 240);
+  color:rgb(41, 41, 41);
+  border: 1px solid rgb(41, 41, 41);
+  
+}
+
+img{
+  border: 1px solid rgb(240, 240, 240);
+  
+}
+
+iframe{
+  background-color: rgb(240, 240, 240);
+  float: center;
+  border-color: rgb(240, 240, 240);
+  color:rgb(240, 240, 240);
+  margin-top: 50px;
+}
+
+.btn-group button { 
+  font-family: "Georgia", Times, serif;
+  font-weight: normal;
+  font-size: 25px;
+  background-color: rgb(41, 41, 41); /* Green background */
+  border: 1px solid rgb(41, 41, 41); /* Green border */
+  color:rgb(0, 0, 0); /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  margin: 10px 50px; /* Float the buttons side by side */
+  
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+
+</style>
+</head>
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="end.jpg" type="image/icon type">
+<body>
+
+<div class="grid-container">
+  
+  <div class="left" style="background-color:rgb(240, 240, 240); padding-top: 350px;"">
+    <p style="font-size: 40px; padding-left:30px; margin:20px; font-weight:bold;">Gabriella Carbonero</p>
+    <DIV STYLE="background-color:rgb(41, 41, 41); height:1px; width:100% ;"></DIV>
+
+    <p style="font-size: 15px; padding-left: 50px; padding-top: 5px;">Hello! I’m a computer science</p>
+    <p style="font-size: 15px; padding-left: 50px;">student looking for an internship!</p>
+
+    <p style="font-size: 15px; padding-left: 50px; padding-top: 10px;">On this website you will find my</p>
+    <p style="font-size: 15px; padding-left: 50px;">projects and down below you </p>
+    <p style="font-size: 15px; padding-left: 50px;">can find my resume.</p>
+
+    <button type="button" onclick="window.location.href='https://docs.google.com/document/d/1F58HGakoyR-iKfvr8Y1pG6d7gLofOoFbkjL2M4Zpt7Y/edit?usp=sharing';"  style=" border-radius: 20px; margin: 60px 50px;">Resume</button>
+  </div>
+  
+  <div class="middle" style="background-color:rgb(41, 41, 41);">
+    <span class="dot" style="margin-left:10px;"></span>
+    <span class="dot"></span>
+    <span class="dot" style="background-color:rgb(41, 41, 41);"></span>
+    <section style="background-image: url('city3.jpg');  background-size: cover; background-color:rgb(41, 41, 41); height: 700px; width:80%;">
+
+    </section>
+  </div>  
+  <div class="right" >
+    <p style="float:right; color: rgb(240, 240, 240); margin-right: 100px;">about me</p>
+    <img src="me2.jpg" alt="Avatar" style=" margin: 50px 100px; width:250px; border-radius: 50%; ">
+    
+    <p style="color:rgb(240, 240, 240); margin: 5px 60px; font-size:20px;font-weight:bold;">Univerity of Califonia, Irvine</p>
+    <p style="color:rgb(240, 240, 240); margin: 5px 60px; ">Major: Computer Science</p>
+
+    <p style="color:rgb(240, 240, 240); margin: 5px 60px; margin-top:20px; font-size:18px; ">Coding Languages</p>
+    
+    <p style="color:rgb(240, 240, 240); margin: 5px 150px">Python</p>
+    <p style="color:rgb(240, 240, 240); margin: 5px 150px">Java</p>
+    <p style="color:rgb(240, 240, 240); margin: 5px 150px">C/C++</p>
+    <p style="color:rgb(240, 240, 240); margin: 5px 150px">SQL</p>
+    <p style="color:rgb(240, 240, 240); margin: 5px 150px">HTML/CSS</p>
+    <p style="color:rgb(240, 240, 240);margin: 5px 60px; margin-top:20px; font-size:18px;">Interests</p>
+    <p style="color:rgb(240, 240, 240); margin: 5px 150px">Data Analystics</p>
+    <p style="color:rgb(240, 240, 240); margin: 5px 150px">Product Management</p>
+  </div>
+  
+  
+</div>
+
+
+<div class="grid-container">
+    
+    <div class="left" style="height:70px; background-color:rgb(240, 240, 240); "">
+    </div>
+    
+    <div class="middle" style="height:70px; background-color:rgb(240, 240, 240);">
+    </div>  
+    <div class="right" style="height:70px; border-left: 1px solid rgb(41, 41, 41); background-color:rgb(240, 240, 240);" >
+    <p style="margin: 40px 20px">Projects</p>
+    </div>
+
+    <div class="footer" style="border-top: 1px solid rgb(41, 41, 41); border-bottom: 1px solid rgb(41, 41, 41); height:200px; background-color:rgb(240, 240, 240);">
+    <p style="font-size:60px;font-weight:bold;">New York City Death Rates</p>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    
+    <div class="left" style="height:700px; background-color:rgb(240, 240, 240); "">
+        <iframe src="nycd.html" height="600px" width="700px" style="border:2px solid rgb(240, 240, 240);"; ></iframe>
+    </div>
+    
+    <div class="right" style=" height:700px; width: 800px; border-left: 1px solid rgb(41, 41, 41); background-color:rgb(240, 240, 240);">
+
+        <p style=" margin: 5px 60px; margin-top:40px; font-size:20px;font-weight:bold;">Created an interactive</p>
+        <p style=" margin: 5px 60px; font-size:20px;font-weight:bold;">graph that displays to</p>
+        <p style=" margin: 5px 60px; font-size:20px;font-weight:bold;">users the top ten</p>
+        <p style=" margin: 5px 60px; font-size:20px;font-weight:bold;">leading causes of death</p>
+        <p style=" margin: 5px 60px; font-size:20px;font-weight:bold;">in New York City.</p>
+        
+        
+
+        <p style=" margin: 5px 60px; margin-top:20px; ">Users are able to apply different</p>
+        <p style=" margin: 5px 60px; ">factors such as gender, race,</p>
+        <p style=" margin: 5px 60px; ">and year (2007-2019) to a pie</p>
+        <p style=" margin: 5px 60px; ">chart providing the leading</p>
+        <p style=" margin: 5px 60px; ">cause of death, number of </p>
+        <p style=" margin: 5px 60px; ">deaths, and frequency due to</p>
+        <p style=" margin: 5px 60px; ">cause of death.</p>
+
+
+        
+        <p style=" margin: 5px 60px; margin-top:20px; ">The following findings were</p>
+        <p style=" margin: 5px 60px; ">based on data provided by NYC</p>
+        <p style=" margin: 5px 60px; ">Open Data, an organization that</p>
+        <p style=" margin: 5px 60px; ">records health-related data.</p>
+
+        <p style=" margin: 5px 60px; margin-top:20px; font-style:italic; ">Created using SQL, Python, HTML, CSS</p>
+        
+        <button type="button" onclick="window.location.href='nyc_death.html';" style=" border-radius: 20px; margin: 60px 50px;">Link</button>
+    </div>
+
+  </div>
+
+  <div class="grid-container">
+    
+    
+    <div class="left" style=" border-right: 1px solid rgb(240, 240, 240); width: 75px; background-color:rgb(41, 41, 41); padding-top: 10px;"">
+    <p style="margin: 25px; writing-mode: vertical-rl; color:rgb(240, 240, 240);">stay connected! </p>
+    <p style="margin: 25px; writing-mode: vertical-rl; color:rgb(240, 240, 240);">stay connected! </p>
+    <p style="margin: 25px; writing-mode: vertical-rl; color:rgb(240, 240, 240);">stay connected! </p>
+    <p style="margin: 25px; writing-mode: vertical-rl; color:rgb(240, 240, 240);">stay connected! </p>
+    <p style="margin: 25px; writing-mode: vertical-rl; color:rgb(240, 240, 240);">stay connected! </p>
+    <p style="margin: 25px; writing-mode: vertical-rl; color:rgb(240, 240, 240);">stay</p>
+    </div>
+    
+    <div class="middle" style="width: 700px;background-color:rgb(41, 41, 41);">
+        <DIV STYLE="background-color:rgb(240, 240, 240); height:1px; width:100% ; margin-top:75px;"></DIV>
+        <span class="dot" style= "height:700px; width:700px; margin:0;background-color:rgb(41, 41, 41);">
+        <p style="margin: 150px 165px; margin-right: 0px; color:rgb(240, 240, 240); font-size:50px;">Stay Connected</p>
+        <div class="btn-group">
+            <button onclick="window.location.href='https://www.linkedin.com/in/gabriella-carbonero/';"><i class="fa fa-linkedin-square" style="margin-left:100px; font-size:100px;color:rgb(240, 240, 240)"></i></button>
+            <button onclick="window.location.href='https://github.com/lulugaby';"><i class="fa fa-github" style="font-size:100px;color:rgb(240, 240, 240)"></i></button>
+          </div>
+        </span>
+    </div>  
+    <div class="right" style="width:725px; border-left: 0px solid rgb(240, 240, 240);" >
+        <span class="dot" style="margin-left:10px;"></span>
+        <span class="dot"></span>
+        <span class="dot" style="background-color:rgb(41, 41, 41);"></span>
+        <section style="border-top: 0px solid rgb(240, 240, 240);  border-left: 1px solid rgb(240, 240, 240); margin-top: 12px; background-image: url('end.jpg'); background-position: center; background-size: cover; background-color:rgb(41, 41, 41); height: 725px; width:80%;">
+
+    </section>
+    </div>
+    
+    
+  </div>
+
+</body>
+</html>
+
+

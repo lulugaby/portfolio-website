@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
   box-sizing: border-box;
@@ -8,86 +11,118 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: rgb(240, 240, 240);
+
 }
 
 /* Style the header */
-.header {
-  grid-area: header;
-  background-color: #f1f1f1;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
+header {
+    height: 33%;
+    width: 100%;
 }
 
-/* The grid container */
-.grid-container {
-  display: grid;
-  grid-template-areas: 
-    'header header header header header header' 
-    'left left left right right right' 
-    'footer footer footer footer footer footer';
-  /* grid-column-gap: 10px; - if you want gap between the columns */
-} 
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
 
-.left,
-.right {
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  margin: 0;
+  height: 33%;
   width: 100%;
 }
 
-/* Style the left column */
-.left {
-  grid-area: left;
-}
-
-/* Style the middle column */
-
-
-/* Style the right column */
-.right {
-  grid-area: right;
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Style the footer */
-.footer {
-  grid-area: footer;
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
+footer {
+    height: 33%;
+    width: 100%;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
-  .grid-container  {
-    grid-template-areas: 
-      'header header header header header header' 
-      'left left left left left left' 
-      'right right right right right right' 
-      'footer footer footer footer footer footer';
+  nav, article {
+    width: 100%;
+    height: auto;
   }
 }
+
+.btn-group button { 
+  font-family: "Georgia", Times, serif;
+  font-weight: normal;
+  font-size: 25px;
+  background-color: #ffffff; /* Green background */
+  border: 1px solid rgb(255, 255, 255); /* Green border */
+  color:rgb(0, 0, 0); /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+img{
+    z-index: auto;
+}
+
+button{
+    z-index: 1;
+}
+
+
 </style>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
 
-<h2>CSS Template using Grid</h2>
-<p>In this example, we have created a header, three equal columns and a footer. On smaller screens, the columns will stack on top of each other.</p>
-<p>Resize the browser window to see the responsive effect.</p>
-<p><strong>Note:</strong> The Grid Layout Module is not supported in Internet Explorer or Edge 15 eand earlier versions.</p>
+<header>
+    <button type="button" onclick="alert('Hello world!')">Click Me!</button>
+    <img src="aboutme2.jpg" width="100%">
+</header>   
 
-<div class="grid-container">
-  <div class="header">
-    <h2>Header</h2>
-  </div>
+
+
+
+<section>
   
-  <div class="left" style="background-color:#aaa;">Column</div> 
-  <div class="right" style="background-color:#ccc;">Column</div>
-  
-  <div class="footer">
-  <p>Footer</p>
-  </div>
-</div>
+<article>
+    <img src="projects2.jpg" width="100%">
+  </article>
+</section>
+
+
+<footer>
+    <img src="stay-connected.jpg" width="100%">
+</footer>
+
 
 </body>
 </html>
